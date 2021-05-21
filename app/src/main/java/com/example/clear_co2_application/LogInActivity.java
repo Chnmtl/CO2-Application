@@ -3,6 +3,7 @@ package com.example.clear_co2_application;
 import android.content.Intent;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -13,10 +14,10 @@ public class LogInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
 
-        Button registrateButton = findViewById(R.id.creatAccountButton);
 
+        final TextView registerText= findViewById(R.id.registerText);
 
-        registrateButton.setOnClickListener(v -> {
+        registerText.setOnClickListener(v -> {
             Intent intent = new Intent(this,CreatAccountActivity.class);
             startActivity(intent);
         });
