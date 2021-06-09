@@ -1,6 +1,8 @@
 package com.example.clear_co2_application;
 
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Looper;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,18 +16,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Button logInButton = findViewById(R.id.logInButton);
-        final Button registrateButton = findViewById(R.id.registrateButton);
-
-        logInButton.setOnClickListener(v -> {
-            Intent intent = new Intent(this,LogInActivity.class);
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            Intent intent = new Intent(this, PhoneVerification.class);
             startActivity(intent);
-        });
+        }, 3000);
 
-        registrateButton.setOnClickListener(v -> {
-            Intent intent = new Intent(this,CreatAccountActivity.class);
-            startActivity(intent);
-        });
+
 
     }
 

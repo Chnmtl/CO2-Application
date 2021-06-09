@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "605520111130",
+    "project_id": "clear-co2",
+    "storage_bucket": "clear-co2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605520111130:android:36eb30fa615e17e7bcd3a3",
+        "android_client_info": {
+          "package_name": "com.example.clear_co2_application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "605520111130-o78l86sesjf8r05ksin4cdotrflu0fn5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAalnwsK07GKqgmJsJ9vCAJF6lSoRZf9rU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "605520111130-o78l86sesjf8r05ksin4cdotrflu0fn5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

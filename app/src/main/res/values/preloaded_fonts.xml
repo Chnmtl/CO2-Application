@@ -7,5 +7,7 @@
 		<item>@font/candal</item>
 		<item>@font/contrail_one</item>
 		<item>@font/karma_light</item>
+		<item>@font/open_sans_bold</item>
+		<item>@font/open_sans_semibold</item>
 	</array>
 </resources>
