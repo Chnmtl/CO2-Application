@@ -3,11 +3,10 @@ package com.example.clear_co2_application;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
-import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+public class Main_Activity extends AppCompatActivity {
 
 
 
@@ -17,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            Intent intent = new Intent(this, PhoneVerification.class);
+            Intent intent = new Intent(this, PhoneVerification_Activity.class);
             startActivity(intent);
         }, 3000);
 

@@ -9,7 +9,7 @@ import android.widget.Button;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class logOutActivity extends AppCompatActivity
+public class LogOut_Activity extends AppCompatActivity
 {
     //UI
     private Button logOut_BUTTON;
@@ -35,7 +35,7 @@ public class logOutActivity extends AppCompatActivity
 
             //On click Sign Out and Go to Log in Activity
            mAuth.signOut();
-           startActivity(new Intent(logOutActivity.this , PhoneVerification.class));
+           startActivity(new Intent(LogOut_Activity.this , PhoneVerification_Activity.class));
            finish();
         });
     }
@@ -49,7 +49,7 @@ public class logOutActivity extends AppCompatActivity
 
         if(currentUser == null)
         {
-            startActivity(new Intent(logOutActivity.this , PhoneVerification.class));
+            startActivity(new Intent(LogOut_Activity.this , PhoneVerification_Activity.class));
             finish();
         }
     }

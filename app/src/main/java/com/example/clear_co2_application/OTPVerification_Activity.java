@@ -1,30 +1,21 @@
 package com.example.clear_co2_application;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.FirebaseException;
-import com.google.firebase.auth.AuthResult;
+import com.example.clear_co2_application.quiz.Questionnaire0_Activity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
-import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 
-import java.util.concurrent.TimeUnit;
-
-public class OTPVerification extends AppCompatActivity {
+public class OTPVerification_Activity extends AppCompatActivity {
 
     //UI
     private EditText otp_TEXT_BOX;
@@ -66,7 +57,7 @@ public class OTPVerification extends AppCompatActivity {
             }
             else
             {
-                Toast.makeText(OTPVerification.this,"Please enter the OTP Code",Toast.LENGTH_SHORT).show();
+                Toast.makeText(OTPVerification_Activity.this,"Please enter the OTP Code",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -96,7 +87,7 @@ public class OTPVerification extends AppCompatActivity {
             }
             else
             {
-                Toast.makeText(OTPVerification.this,"Verification Failed",Toast.LENGTH_SHORT).show();
+                Toast.makeText(OTPVerification_Activity.this,"Verification Failed",Toast.LENGTH_SHORT).show();
 
             }
 
@@ -106,7 +97,7 @@ public class OTPVerification extends AppCompatActivity {
 
     private void sendToMain()
     {
-        startActivity(new Intent(OTPVerification.this,logOutActivity.class));
+        startActivity(new Intent(OTPVerification_Activity.this, Questionnaire0_Activity.class));
         finish();
     }
 

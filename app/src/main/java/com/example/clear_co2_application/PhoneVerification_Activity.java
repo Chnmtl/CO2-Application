@@ -14,7 +14,7 @@ import com.google.firebase.auth.*;
 import java.util.concurrent.TimeUnit;
 
 
-public class PhoneVerification extends AppCompatActivity
+public class PhoneVerification_Activity extends AppCompatActivity
 {
 
     //UI
@@ -57,7 +57,7 @@ public class PhoneVerification extends AppCompatActivity
                 PhoneAuthOptions options = PhoneAuthOptions.newBuilder(auth)
                         .setPhoneNumber(full_phone_number)
                         .setTimeout(60L,TimeUnit.SECONDS)
-                        .setActivity(PhoneVerification.this)
+                        .setActivity(PhoneVerification_Activity.this)
                         .setCallbacks(mCallBacks)
                         .build();
 
@@ -67,7 +67,7 @@ public class PhoneVerification extends AppCompatActivity
             else
             {
                 //Inform user with a pop up that the data are not completed full
-                Toast.makeText(PhoneVerification.this,"Please enter correctly the phone number...",Toast.LENGTH_SHORT).show();
+                Toast.makeText(PhoneVerification_Activity.this,"Please enter correctly the phone number...",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -83,32 +83,31 @@ public class PhoneVerification extends AppCompatActivity
             @Override
             public void onVerificationFailed(@NonNull FirebaseException e)
             {
-                Toast.makeText(PhoneVerification.this,e.getMessage(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(PhoneVerification_Activity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onCodeSent(@NonNull  String s, @NonNull  PhoneAuthProvider.ForceResendingToken forceResendingToken)
             {
                 super.onCodeSent(s, forceResendingToken);
-                Toast.makeText(PhoneVerification.this,"OTP has been Sent",Toast.LENGTH_SHORT).show();
+                Toast.makeText(PhoneVerification_Activity.this,"OTP has been Sent",Toast.LENGTH_SHORT).show();
 
 
-
-
+                /*
                 new Handler().postDelayed((Runnable) () -> {
-                    Intent OTPIntent = new Intent(PhoneVerification.this, OTPVerification.class);
+                    Intent OTPIntent = new Intent(PhoneVerification_Activity.this, OTPVerification_Activity.class);
                     OTPIntent.putExtra("auth",s);
                     startActivity(OTPIntent);
 
                 },10000);
 
+                 */
 
-                /*
-                Intent OTPIntent = new Intent(PhoneVerification.this, OTPVerification.class);
+                Intent OTPIntent = new Intent(PhoneVerification_Activity.this, OTPVerification_Activity.class);
                 OTPIntent.putExtra("auth",s);
                 startActivity(OTPIntent);
 
-                 */
+
 
 
 
@@ -133,7 +132,7 @@ public class PhoneVerification extends AppCompatActivity
     private void sendToMain()
     {
         //If user is already in send him to log out screen
-        Intent mainIntent = new Intent(PhoneVerification.this , logOutActivity.class);
+        Intent mainIntent = new Intent(PhoneVerification_Activity.this , LogOut_Activity.class);
         startActivity(mainIntent);
         finish();
     }
@@ -148,7 +147,7 @@ public class PhoneVerification extends AppCompatActivity
             }
             else
             {
-                Toast.makeText(PhoneVerification.this,task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(PhoneVerification_Activity.this,task.getException().getMessage(),Toast.LENGTH_SHORT).show();
 
             }
 
