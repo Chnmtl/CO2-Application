@@ -6,10 +6,14 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		tools:context=".Main_Activity" android:background="@color/black">
-    <ImageView
-            android:layout_width="381dp"
-            android:layout_height="371dp" app:srcCompat="@drawable/clearco2_outline_png"
-            android:id="@+id/imageView3" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+
+	<ImageView
+		android:id="@+id/imageView3"
+		android:layout_width="330dp"
+		android:layout_height="330dp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:srcCompat="@drawable/clearco2_outline_png" />
 </androidx.constraintlayout.widget.ConstraintLayout>

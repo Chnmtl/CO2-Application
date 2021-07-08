@@ -1,19 +1,18 @@
 package com.example.clear_co2_application;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.clear_co2_application.quiz.Questionnaire0_Activity;
+import com.example.clear_co2_application.new_user.User_Register_Activity;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class OTPVerification_Activity extends AppCompatActivity {
 
@@ -25,6 +24,7 @@ public class OTPVerification_Activity extends AppCompatActivity {
 
     //FireBase
     private FirebaseAuth firebaseAuth;
+    private FirebaseFirestore firebaseFirestore;
 
 
     @Override
@@ -43,6 +43,8 @@ public class OTPVerification_Activity extends AppCompatActivity {
 
         //FireBase
         firebaseAuth = FirebaseAuth.getInstance();
+        firebaseFirestore = FirebaseFirestore.getInstance();
+
 
         //Button Listener
         verify_BUTTON.setOnClickListener(v ->
@@ -65,17 +67,6 @@ public class OTPVerification_Activity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        FirebaseUser currenUser = firebaseAuth.getCurrentUser();
-
-        if (currenUser != null)
-        {
-            sendToMain();
-        }
-    }
 
     private void signIn(PhoneAuthCredential credential)
     {
@@ -83,7 +74,21 @@ public class OTPVerification_Activity extends AppCompatActivity {
         {
             if (task.isSuccessful())
             {
-                sendToMain();
+                DocumentReference docRef = firebaseFirestore.collection("users").document(firebaseAuth.getCurrentUser().getUid());
+
+                docRef.get().addOnSuccessListener(documentSnapshot ->
+                {
+                    if (documentSnapshot.exists())
+                    {
+                        sendToHomePage();
+                    }
+                    else
+                    {
+                        sendToRegister();
+                    }
+
+                });
+
             }
             else
             {
@@ -95,9 +100,15 @@ public class OTPVerification_Activity extends AppCompatActivity {
 
     }
 
-    private void sendToMain()
+    private void sendToRegister()
     {
-        startActivity(new Intent(OTPVerification_Activity.this, Questionnaire0_Activity.class));
+        startActivity(new Intent(OTPVerification_Activity.this, User_Register_Activity.class));
+        finish();
+    }
+
+    private void sendToHomePage()
+    {
+        startActivity(new Intent(OTPVerification_Activity.this, HomePageActivity.class));
         finish();
     }
 

@@ -25,47 +25,66 @@
 			app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintHorizontal_bias="0.493"
 			app:layout_constraintTop_toBottomOf="@+id/_dynamic"/>
+
 	<RadioGroup
-			android:layout_width="360dp"
-			android:layout_height="234dp"
-			app:layout_constraintTop_toBottomOf="@+id/textView13" app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="24dp">
+		android:id="@+id/why_group"
+		android:layout_width="360dp"
+		android:layout_height="234dp"
+		android:layout_marginTop="24dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textView13">
+
 		<RadioButton
-				android:text="I have no prior knowledge of the carbon footprinting process"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:button="@android:color/transparent"
-				android:id="@+id/level_one"
-				android:layout_marginTop="20dp"
-				android:background="@drawable/radio_selector"
-				android:textColor="@drawable/text_color"
-				android:elevation="4dp"
-				android:gravity="center" android:layout_gravity="center" android:layout_marginLeft="3dp"
-				android:layout_marginStart="3dp" android:layout_marginRight="3dp" android:layout_marginEnd="3dp"/>
+			android:id="@+id/level_one"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginStart="3dp"
+			android:layout_marginLeft="3dp"
+			android:layout_marginTop="20dp"
+			android:layout_marginEnd="3dp"
+			android:layout_marginRight="3dp"
+			android:background="@drawable/radio_selector"
+			android:button="@android:color/transparent"
+			android:elevation="4dp"
+			android:gravity="center"
+			android:text="I have no prior knowledge of the carbon footprinting process"
+			android:textColor="@drawable/text_color" />
+
 		<RadioButton
-				android:text="I have done some carbon footprinting process"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:button="@android:color/transparent"
-				android:id="@+id/level_two"
-				android:layout_marginTop="20dp"
-				android:background="@drawable/radio_selector"
-				android:textColor="@drawable/text_color"
-				android:elevation="6dp" android:gravity="center" android:layout_gravity="center"
-				android:layout_marginLeft="3dp" android:layout_marginStart="3dp" android:layout_marginRight="3dp"
-				android:layout_marginEnd="3dp"/>
+			android:id="@+id/level_two"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginStart="3dp"
+			android:layout_marginLeft="3dp"
+			android:layout_marginTop="20dp"
+			android:layout_marginEnd="3dp"
+			android:layout_marginRight="3dp"
+			android:background="@drawable/radio_selector"
+			android:button="@android:color/transparent"
+			android:elevation="6dp"
+			android:gravity="center"
+			android:text="I have done some carbon footprinting process"
+			android:textColor="@drawable/text_color" />
+
 		<RadioButton
-				android:text="I have already calculated my carbon footprint"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:button="@android:color/transparent"
-				android:id="@+id/level_three"
-				android:layout_marginTop="20dp"
-				android:background="@drawable/radio_selector"
-				android:textColor="@drawable/text_color"
-				android:elevation="8dp" android:gravity="center" android:layout_gravity="center"
-				android:layout_marginLeft="3dp" android:layout_marginStart="3dp" android:layout_marginRight="3dp"
-				android:layout_marginEnd="3dp"/>
+			android:id="@+id/level_three"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginStart="3dp"
+			android:layout_marginLeft="3dp"
+			android:layout_marginTop="20dp"
+			android:layout_marginEnd="3dp"
+			android:layout_marginRight="3dp"
+			android:background="@drawable/radio_selector"
+			android:button="@android:color/transparent"
+			android:elevation="8dp"
+			android:gravity="center"
+			android:text="I have already calculated my carbon footprint"
+			android:textColor="@drawable/text_color" />
 	</RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

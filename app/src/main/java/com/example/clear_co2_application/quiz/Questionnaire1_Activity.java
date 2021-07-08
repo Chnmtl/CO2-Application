@@ -8,10 +8,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.example.clear_co2_application.R;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Locale;
+import java.util.Map;
 
 public class Questionnaire1_Activity extends AppCompatActivity {
 
@@ -33,30 +34,38 @@ public class Questionnaire1_Activity extends AppCompatActivity {
         //Create Countries List
         Locale[] locales = Locale.getAvailableLocales();
         ArrayList<String> countries = new ArrayList<String>();
-        for (Locale locale : locales) {
+        for (Locale locale : locales)
+        {
             String country = locale.getDisplayCountry();
-            if (country.trim().length()>0 && !countries.contains(country)) {
+            if (country.trim().length()>0 && !countries.contains(country))
+            {
                 countries.add(country);
             }
         }
         Collections.sort(countries);
 
+        //Get the map
+        Intent before_intent = getIntent();
+        Map<String,Object> user = (Map<String, Object>) before_intent.getSerializableExtra("map");
 
 
-        //Creat Adapter for the list
+
+        //Create Adapter for the list
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,countries);
         countriesList.setAdapter(arrayAdapter);
 
-
-        //Button listener to next Question
-        continue_Button.setOnClickListener(v ->
+        countriesList.setOnItemClickListener((parent, view, position, id) ->
         {
-            startActivity(new Intent(Questionnaire1_Activity.this, Questionnaire2_Activity.class));
+            //Save users choice Firebase DataBase
+            String country = arrayAdapter.getItem(position);
+            user.put("country",country);
+
+            //Change page
+            Intent intent = new Intent(Questionnaire1_Activity.this, Questionnaire2_Activity.class);
+            intent.putExtra("map", (Serializable) user);
+            startActivity(intent);
             Animatoo.animateSlideLeft(this);
         });
+
     }
-
-
-
-
 }

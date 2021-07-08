@@ -3,33 +3,15 @@
 			xmlns:app="http://schemas.android.com/apk/res-auto"
 			xmlns:tools="http://schemas.android.com/tools"
 			android:id="@+id/mobile_navigation"
-			app:startDestination="@+id/navigation_home">
-
-	<fragment
-			android:id="@+id/navigation_camera"
-			android:name="com.example.clear_co2_application.ui.dashboard.DashboardFragment"
-			android:label="@string/title_camera"
-			tools:layout="@layout/fragment_dashboard"/>
-	<fragment
-			android:id="@+id/navigation_profile"
-			android:name="com.example.clear_co2_application.ui.home.HomeFragment"
-			android:label="@string/title_profile"
-			tools:layout="@layout/fragment_home"/>
-	<fragment
-			android:id="@+id/navigation_home"
-			android:name="com.example.clear_co2_application.ui.home.HomeFragment"
-			android:label="@string/title_home"
-			tools:layout="@layout/fragment_home"/>
-
-	<fragment
-			android:id="@+id/navigation_statistics"
-			android:name="com.example.clear_co2_application.ui.dashboard.DashboardFragment"
-			android:label="@string/title_statistics"
-			tools:layout="@layout/fragment_dashboard"/>
-
-	<fragment
-			android:id="@+id/navigation_list"
-			android:name="com.example.clear_co2_application.ui.notifications.NotificationsFragment"
-			android:label="@string/title_list"
-			tools:layout="@layout/fragment_notifications"/>
+			app:startDestination="@id/homePage">
+	<fragment android:id="@+id/homePage" android:name="com.example.clear_co2_application.navigator.HomePage"
+			  android:label="fragment_home_page" tools:layout="@layout/fragment_home_page"/>
+	<fragment android:id="@+id/statisticsPage" android:name="com.example.clear_co2_application.navigator.StatisticsPage"
+			  android:label="fragment_statistics_page" tools:layout="@layout/fragment_statistics_page"/>
+	<fragment android:id="@+id/cameraPage" android:name="com.example.clear_co2_application.navigator.CameraPage"
+			  android:label="fragment_camera_page" tools:layout="@layout/fragment_camera_page"/>
+	<fragment android:id="@+id/listPage" android:name="com.example.clear_co2_application.navigator.ListPage"
+			  android:label="fragment_list_page" tools:layout="@layout/fragment_list_page"/>
+	<fragment android:id="@+id/profilePage" android:name="com.example.clear_co2_application.navigator.ProfilePage"
+			  android:label="fragment_profile_page" tools:layout="@layout/fragment_profile_page"/>
 </navigation>

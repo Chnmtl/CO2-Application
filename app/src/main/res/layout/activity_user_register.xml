@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".new_user.User_Register_Activity">
+
+    <Button
+        android:id="@+id/register_continueBTN"
+        android:layout_width="338dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:text="CONTINUE"
+        app:backgroundTint="#707079"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cityTextBox" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="Welcome!"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans_semibold"
+        android:foregroundGravity="top|center"
+        android:gravity="center|top"
+        android:text="Please insert yout data below."
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <EditText
+        android:id="@+id/firstNameTextBox"
+        android:layout_width="268dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/text_inout_bg"
+        android:drawableLeft="@drawable/first_name"
+        android:ems="10"
+        android:fontFamily="@font/open_sans_bold"
+        android:hint="First name"
+        android:inputType="text"
+        android:paddingLeft="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <EditText
+        android:id="@+id/lastNameTextBox"
+        android:layout_width="268dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/text_inout_bg"
+        android:drawableLeft="@drawable/first_name"
+        android:ems="10"
+        android:fontFamily="@font/open_sans_bold"
+        android:hint="Last name"
+        android:inputType="text"
+        android:paddingLeft="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstNameTextBox" />
+
+    <EditText
+        android:id="@+id/emailTextBox"
+        android:layout_width="268dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/text_inout_bg"
+        android:drawableLeft="@drawable/email"
+        android:ems="10"
+        android:fontFamily="@font/open_sans_bold"
+        android:hint=" Email"
+        android:inputType="textWebEmailAddress"
+        android:paddingLeft="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lastNameTextBox" />
+
+    <EditText
+        android:id="@+id/companyTextBox"
+        android:layout_width="268dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/text_inout_bg"
+        android:drawableLeft="@drawable/company"
+        android:ems="10"
+        android:fontFamily="@font/open_sans_bold"
+        android:hint=" Company Name"
+        android:inputType="textWebEmailAddress"
+        android:paddingLeft="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextBox" />
+
+    <EditText
+        android:id="@+id/jobTextBox"
+        android:layout_width="268dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/text_inout_bg"
+        android:drawableLeft="@drawable/jobtitle"
+        android:ems="10"
+        android:fontFamily="@font/open_sans_bold"
+        android:hint=" Job Title"
+        android:inputType="textWebEmailAddress"
+        android:paddingLeft="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/companyTextBox" />
+
+    <EditText
+        android:id="@+id/addressTextBox"
+        android:layout_width="268dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/text_inout_bg"
+        android:drawableLeft="@drawable/address"
+        android:ems="10"
+        android:fontFamily="@font/open_sans_bold"
+        android:hint=" Address"
+        android:inputType="textWebEmailAddress"
+        android:paddingLeft="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jobTextBox" />
+
+    <EditText
+        android:id="@+id/cityTextBox"
+        android:layout_width="268dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/text_inout_bg"
+        android:drawableLeft="@drawable/address"
+        android:ems="10"
+        android:fontFamily="@font/open_sans_bold"
+        android:hint=" City"
+        android:inputType="textWebEmailAddress"
+        android:paddingLeft="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addressTextBox" />
+</androidx.constraintlayout.widget.ConstraintLayout>

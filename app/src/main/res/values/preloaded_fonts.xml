@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<array name="preloaded_fonts" translatable="false">
-		<item>@font/alfa_slab_one</item>
-		<item>@font/allerta</item>
-		<item>@font/bangers</item>
-		<item>@font/candal</item>
-		<item>@font/contrail_one</item>
-		<item>@font/karma_light</item>
-		<item>@font/open_sans_bold</item>
-		<item>@font/open_sans_semibold</item>
-	</array>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/alfa_slab_one</item>
+        <item>@font/allerta</item>
+        <item>@font/andada</item>
+        <item>@font/bangers</item>
+        <item>@font/candal</item>
+        <item>@font/contrail_one</item>
+        <item>@font/karma_light</item>
+        <item>@font/open_sans_bold</item>
+        <item>@font/open_sans_semibold</item>
+    </array>
 </resources>

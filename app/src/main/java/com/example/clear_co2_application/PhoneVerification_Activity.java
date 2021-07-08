@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.*;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.concurrent.TimeUnit;
 
 
@@ -24,6 +26,7 @@ public class PhoneVerification_Activity extends AppCompatActivity
     //FireBase
     private FirebaseAuth auth;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallBacks;
+    private FirebaseFirestore firebaseFirestore;
 
 
     @Override
@@ -39,6 +42,7 @@ public class PhoneVerification_Activity extends AppCompatActivity
 
         //FireBase
         auth = FirebaseAuth.getInstance();
+        firebaseFirestore = FirebaseFirestore.getInstance();
 
         //Button Listener
         continue_BUTTON.setOnClickListener(v ->
@@ -132,7 +136,7 @@ public class PhoneVerification_Activity extends AppCompatActivity
     private void sendToMain()
     {
         //If user is already in send him to log out screen
-        Intent mainIntent = new Intent(PhoneVerification_Activity.this , LogOut_Activity.class);
+        Intent mainIntent = new Intent(PhoneVerification_Activity.this , HomePageActivity.class);
         startActivity(mainIntent);
         finish();
     }
