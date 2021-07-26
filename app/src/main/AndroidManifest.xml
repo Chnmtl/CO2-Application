@@ -3,6 +3,8 @@
     package="com.example.clear_co2_application">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,15 +13,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Clear_CO2_Application">
-        <activity android:name=".new_user.User_Register_Activity"></activity>
-        <activity android:name=".HomePageActivity"></activity>
-        <activity android:name=".quiz.Questionnaire5_Activity"></activity>
-        <activity android:name=".quiz.Questionnaire4_Activity"></activity>
-        <activity android:name=".quiz.Questionnaire3_Activity"></activity>
-        <activity android:name=".quiz.Questionnaire2_Activity"></activity>
-        <activity android:name=".quiz.Questionnaire1_Activity"></activity>
-        <activity android:name=".quiz.Questionnaire0_Activity"></activity>
-        <activity android:name=".quiz.QuestionnaireStartScreen" />
+        <activity android:name=".ProcessPopUp_Activity"></activity>
+        <activity android:name=".ProductDetailActivity" />
+        <activity
+            android:name=".PopUp_Activity"
+            android:theme="@style/Theme.PopMe" />
+        <activity android:name=".new_user.User_Register_Activity" />
+        <activity android:name=".HomePageActivity" />
+        <activity android:name=".quiz.Questionnaire5_Activity" />
+        <activity android:name=".quiz.Questionnaire4_Activity" />
+        <activity android:name=".quiz.Questionnaire3_Activity" />
+        <activity android:name=".quiz.Questionnaire2_Activity" />
+        <activity android:name=".quiz.Questionnaire1_Activity" />
+        <activity android:name=".quiz.Questionnaire0_Activity" />
         <activity android:name=".OTPVerification_Activity" />
         <activity android:name=".PhoneVerification_Activity" />
         <activity android:name=".Main_Activity">
@@ -29,6 +35,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ProductProfileActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

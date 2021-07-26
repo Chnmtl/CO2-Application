@@ -51,7 +51,7 @@ public class Questionnaire1_Activity extends AppCompatActivity {
 
 
         //Create Adapter for the list
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,countries);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, countries);
         countriesList.setAdapter(arrayAdapter);
 
         countriesList.setOnItemClickListener((parent, view, position, id) ->

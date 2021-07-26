@@ -3,11 +3,60 @@
 												   xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
 												   android:layout_width="match_parent"
 												   android:layout_height="match_parent"
-												   tools:context=".navigator.HomePage">
+												   tools:context=".navigator.HomePage"
+	android:focusable="false"
+	android:clickable="false">
+
 	<TextView
-			android:text="THIS IS THE LIST PAGE"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:id="@+id/textView15"
-			app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="40dp"/>
+		android:id="@+id/textView19"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="8dp"
+		android:fontFamily="@font/open_sans_bold"
+		android:foregroundGravity="center"
+		android:gravity="center"
+		android:text="Your list of products:"
+		android:textColor="#707070"
+		android:textSize="24sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/products_list"
+		android:layout_width="wrap_content"
+		android:layout_height="479dp"
+		android:layout_marginStart="1dp"
+		android:layout_marginEnd="1dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textView19"/>
+
+	<ProgressBar
+		android:id="@+id/progress_circle"
+		android:layout_width="53dp"
+		android:layout_height="380dp"
+		app:layout_constraintBottom_toBottomOf="@+id/products_list"
+		app:layout_constraintEnd_toEndOf="@+id/products_list"
+		app:layout_constraintStart_toStartOf="@+id/products_list"
+		app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+	<Button
+		android:id="@+id/new_product_button"
+		android:layout_width="402dp"
+		android:layout_height="80dp"
+		android:layout_marginTop="4dp"
+		android:layout_marginBottom="80dp"
+		android:drawableTop="@drawable/basket"
+		android:drawablePadding="0dp"
+		android:text="ADD NEW PRODUCT"
+		app:backgroundTint="#CBA6A5A5"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.444"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/products_list"
+		app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
