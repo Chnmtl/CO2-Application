@@ -39,7 +39,6 @@
 			android:text="VERIFY OTP"
 			android:layout_width="338dp"
 			android:layout_height="60dp" android:id="@+id/verifyBTN"
-			app:backgroundTint="#707079"
 			app:layout_constraintTop_toBottomOf="@+id/otpTextBox" app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="16dp"/>
 	<TextView
@@ -47,24 +46,27 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content" android:id="@+id/textView"
 			app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="180dp" android:textColor="#707070"
+			app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="180dp"
 			android:fontFamily="@font/open_sans_bold" android:textSize="24sp"/>
 	<TextView
 			android:text="We have sent a message to:"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content" android:id="@+id/textView4"
 			app:layout_constraintTop_toBottomOf="@+id/textView"
-			android:layout_marginTop="24dp" android:textColor="#707070" app:layout_constraintStart_toStartOf="parent"
+			android:layout_marginTop="24dp" app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintEnd_toEndOf="parent" android:fontFamily="@font/open_sans_semibold"
 			android:textSize="14sp"/>
+
 	<TextView
-			android:text="+30697XXXXXX"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:id="@+id/textView5"
-			app:layout_constraintTop_toBottomOf="@+id/textView4"
-			android:textColor="#707070" app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintStart_toStartOf="parent" android:fontFamily="@font/open_sans_semibold"
-			android:textStyle="bold"/>
+		android:id="@+id/otpPhoneNumber"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:fontFamily="@font/open_sans_semibold"
+		android:text="AAA"
+		android:textStyle="bold"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textView4" />
 	<EditText
 			android:layout_width="250dp"
 			android:layout_height="50dp"
@@ -72,7 +74,7 @@
 			android:ems="10"
 			android:id="@+id/otpTextBox"
 			app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintTop_toBottomOf="@+id/textView5" android:background="@drawable/text_inout_bg"
+			app:layout_constraintTop_toBottomOf="@+id/otpPhoneNumber"
 			android:layout_marginTop="32dp" android:hint="Enter your OTP" android:foregroundGravity="center"
 			android:gravity="center" android:fontFamily="@font/open_sans_bold" android:textStyle="bold"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

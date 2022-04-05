@@ -1,9 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="web" url="file://$PROJECT_DIR$" />
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2203125" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/drawable/popup_design.xml" value="0.2203125" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/activity_homepage.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/activity_o_t_p_verification.xml" value="0.1933876811594203" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/activity_phone_verification.xml" value="0.1933876811594203" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/activity_pop_up.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/activity_process.xml" value="0.25" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/activity_process_pop_up.xml" value="0.2" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/activity_process_step.xml" value="0.19" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/activity_process_step_pop_up.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/activity_product_detail.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/activity_product_pop_up.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/activity_productprofile.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/activity_questionnaire0.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/activity_questionnaire1.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/activity_questionnaire2.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/activity_questionnaire3.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/activity_questionnaire4.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/activity_questionnaire5.xml" value="0.20018115942028986" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/activity_questionnaire_start_screen.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/activity_user_register.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/fragment_camera_page.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/fragment_home_page.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/fragment_list_page.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/fragment_product_page.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/fragment_profile_page.xml" value="0.2" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/fragment_statistics_page.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/process_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/product_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/step_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/layout/top_toolbar.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/menu/product_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/menu/profile_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/menu/step_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/menu/top_nav_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/AndroidApplication/app/src/main/res/mipmap-anydpi-v26/app_icon.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/fener/Desktop/Latest Working/AndroidApplication/app/src/main/res/layout/fragment_profile_page.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/fener/Desktop/Latest Working/AndroidApplication/app/src/main/res/layout/step_item.xml" value="0.1" />
+      </map>
+    </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="jbr-11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

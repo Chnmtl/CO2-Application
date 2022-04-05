@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/sort"
+        app:showAsAction="never"
+        android:title="Sort">
+        <menu>
+            <item
+                android:id="@+id/aToZ"
+                android:title="A-Z"/>
+            <item
+                android:id="@+id/zToA"
+                android:title="Z-A"/>
+            <item
+                android:id="@+id/date_asc"
+                android:title="Date (Asc.)"/>
+            <item
+                android:id="@+id/date_desc"
+                android:title="Date (Desc.)"/>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/edit"
+        app:showAsAction="never"
+        android:title="Edit Products" />
+
+    <item
+        android:id="@+id/delete"
+        app:showAsAction="never"
+        android:title="Delete Products" />
+</menu>

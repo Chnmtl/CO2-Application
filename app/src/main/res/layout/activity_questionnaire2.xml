@@ -11,7 +11,6 @@
 			android:text="Continue"
 			android:layout_width="338dp"
 			android:layout_height="60dp" android:id="@+id/sector_continue_BUTTON"
-			app:backgroundTint="#707079"
 			app:layout_constraintTop_toBottomOf="@+id/_dynamic"
 			app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"/>
@@ -19,7 +18,6 @@
 			android:text="Which industry sector(s) is your company specialized in?"
 			android:layout_width="wrap_content"
 			android:layout_height="83dp" android:id="@+id/textView10"
-			android:textColor="#707070"
 			android:fontFamily="@font/open_sans_bold" android:textSize="24sp"
 			android:foregroundGravity="center" android:gravity="center"
 			app:layout_constraintStart_toStartOf="parent"

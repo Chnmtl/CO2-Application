@@ -18,8 +18,6 @@ public class Main_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
             Intent intent = new Intent(this, PhoneVerification_Activity.class);
             startActivity(intent);

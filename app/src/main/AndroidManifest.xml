@@ -2,22 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.clear_co2_application">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/app_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Clear_CO2_Application">
-        <activity android:name=".ProcessPopUp_Activity"></activity>
-        <activity android:name=".ProductDetailActivity" />
+        <activity android:name=".Process_PopUp_Activity"/>
         <activity
-            android:name=".PopUp_Activity"
-            android:theme="@style/Theme.PopMe" />
+            android:name=".Process_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Process_Step_Activity"
+            android:exported="true" />
+        <activity android:name=".Process_Step_PopUp_Activity" />
+        <activity android:name=".Product_PopUp_Activity"/>
         <activity android:name=".new_user.User_Register_Activity" />
         <activity android:name=".HomePageActivity" />
         <activity android:name=".quiz.Questionnaire5_Activity" />
@@ -41,5 +41,9 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>

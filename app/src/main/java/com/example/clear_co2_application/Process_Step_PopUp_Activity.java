@@ -14,7 +14,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.github.dhaval2404.imagepicker.ImagePicker;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,23 +22,27 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
-public class PopUp_Activity extends AppCompatActivity
+public class Process_Step_PopUp_Activity extends AppCompatActivity
 {
+
+
+
     //UI
-    private Button add_product_BTN;
+    private Button add_step_BTN;
     private FloatingActionButton add_photo_BTN;
-    private EditText product_name;
-    private ImageView product_image;
+    private EditText step_name;
+    private ImageView step_image;
 
     //Firebase
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private FirebaseDatabase db = FirebaseDatabase.getInstance("https://clear-co2-default-rtdb.europe-west1.firebasedatabase.app/");
-    private DatabaseReference root = db.getReference().child("Users").child(mAuth.getCurrentUser().getUid()+"/Products/");
+    private DatabaseReference root;
     private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
     private StorageReference storageRef = FirebaseStorage.getInstance().getReference();
+
+
 
     private Uri imageUri;
 
@@ -47,13 +50,13 @@ public class PopUp_Activity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pop_up);
+        setContentView(R.layout.activity_process_step_pop_up);
 
         //UI
-        add_product_BTN = findViewById(R.id.add_pop_up_button);
-        product_image = findViewById(R.id.product_img);
-        product_name = findViewById(R.id.productTitle);
-        add_photo_BTN = findViewById(R.id.add_picture);
+        add_step_BTN = findViewById(R.id.add_process_step_pop_up_btn);
+        step_image = findViewById(R.id.process_step_img);
+        step_name = findViewById(R.id.process_step_name);
+        add_photo_BTN = findViewById(R.id.add_process_step_picture);
 
         //Pop Up Settings
         DisplayMetrics dm = new DisplayMetrics();
@@ -71,33 +74,36 @@ public class PopUp_Activity extends AppCompatActivity
 
         getWindow().setAttributes(params);
 
+        //Extras
+        Bundle extras = getIntent().getExtras();
+        String pName = extras.getString("pName");
+
+        //Firebase
+        root = db.getReference().child("Users").child(mAuth.getCurrentUser().getUid()+"/Products/"+ pName + "/Processes/" + extras.getString("proName") + "/Steps/");
+
         //On click listener
-        add_photo_BTN.setOnClickListener(v -> 
+        add_photo_BTN.setOnClickListener(v ->
         {
-            ImagePicker.with(PopUp_Activity.this)
+            ImagePicker.with(Process_Step_PopUp_Activity.this)
                     .crop()	    			//Crop image(Optional), Check Customization for more option
                     .compress(1024)			//Final image size will be less than 1 MB(Optional)
                     .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
                     .start();
         });
 
-        add_product_BTN.setOnClickListener(v ->
+        add_step_BTN.setOnClickListener(v ->
         {
-
-            String name = product_name.getText().toString();
-            if (name.isEmpty() || imageUri == null)
+            String stepName = step_name.getText().toString();
+            if (stepName.isEmpty() || imageUri == null)
             {
-                Toast.makeText(PopUp_Activity.this,"You have to add photo and name for the product",Toast.LENGTH_SHORT).show();
+                Toast.makeText(Process_Step_PopUp_Activity.this,"You have to add photo and name for the product",Toast.LENGTH_SHORT).show();
             }
             else
             {
-
-                uploadDataToFirebase(imageUri,name);
+                uploadDataToFirebase(imageUri, pName, extras.getString("proName"), stepName);
                 //Finish Pop up
                 finish();
             }
-
-
         });
     }
 
@@ -108,31 +114,29 @@ public class PopUp_Activity extends AppCompatActivity
 
         imageUri = data.getData();
 
-        Picasso.get().load(imageUri).into(product_image);
+        Picasso.get().load(imageUri).into(step_image);
 
     }
 
     //Uploading image to Firebase Storage
-    private void uploadDataToFirebase(Uri imageUri,String name)
-    {
-        StorageReference fileRef = storageRef.child("users/"+mAuth.getCurrentUser().getUid()+"/Products/"+product_name.getText().toString()+"/mainPhoto.jpg");
+    private void uploadDataToFirebase(Uri imageUri, String productName, String processName, String stepName) {
+        StorageReference fileRef = storageRef.child("users/" + mAuth.getCurrentUser().getUid() + "/Products/" + productName + "/Processes/" + processName
+                + "/Steps/" + stepName);
 
         fileRef.putFile(imageUri).addOnSuccessListener(taskSnapshot -> {
 
             Task<Uri> firebaseUri = taskSnapshot.getStorage().getDownloadUrl();
 
             firebaseUri.addOnSuccessListener(uri -> {
-                UploadedProduct upload = new UploadedProduct(name,uri.toString());
-                String uploadId = root.push().getKey();
-                root.child(uploadId).setValue(upload);
-
+                UploadedProduct upload = new UploadedProduct(stepName, uri.toString(), 0, "no value", "no info");
+                root.child(stepName).setValue(upload);
             });
 
-            Toast.makeText(PopUp_Activity.this, "Image Uploaded.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Process_Step_PopUp_Activity.this, "Step Uploaded.", Toast.LENGTH_SHORT).show();
 
         }).addOnFailureListener(e ->
         {
-            Toast.makeText(PopUp_Activity.this, "Failed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Process_Step_PopUp_Activity.this, "Failed", Toast.LENGTH_SHORT).show();
 
         });
     }

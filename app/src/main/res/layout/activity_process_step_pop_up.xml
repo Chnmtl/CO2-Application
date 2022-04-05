@@ -4,99 +4,91 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/popup_design"
-    tools:context=".PopUp_Activity">
+    tools:context=".Process_Step_PopUp_Activity">
 
     <Button
-        android:id="@+id/add_pop_up_button"
+        android:id="@+id/add_process_step_pop_up_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginLeft="161dp"
         android:layout_marginTop="70dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginRight="162dp"
         android:drawablePadding="0dp"
         android:text="ADD"
-        app:backgroundTint="#707070"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_img" />
+        app:layout_constraintTop_toBottomOf="@+id/process_step_img" />
 
     <EditText
-        android:id="@+id/productTitle"
+        android:id="@+id/process_step_name"
         android:layout_width="223dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_marginBottom="32dp"
-        android:background="@drawable/text_inout_bg"
         android:ems="10"
         android:fontFamily="@font/open_sans_bold"
         android:inputType="text"
         android:paddingLeft="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView22"
+        app:layout_constraintBottom_toTopOf="@+id/process_step_image_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/process_step_header_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/open_sans_bold"
         android:foregroundGravity="center"
         android:gravity="center"
-        android:text="Insert Informations for the new product:"
-        android:textColor="#707070"
+        android:text="Insert Informations for the new step of these product:"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/process_step_name_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"
         android:layout_marginBottom="8dp"
-        android:text="Product Name"
+        android:text="Step Name"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/productTitle"
-        app:layout_constraintEnd_toEndOf="@+id/productTitle"
-        app:layout_constraintStart_toStartOf="@+id/productTitle"
-        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+        app:layout_constraintBottom_toTopOf="@+id/process_step_name"
+        app:layout_constraintEnd_toEndOf="@+id/process_step_name"
+        app:layout_constraintStart_toStartOf="@+id/process_step_name"
+        app:layout_constraintTop_toBottomOf="@+id/process_step_header_text" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/process_step_image_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:text="Product Picture"
+        android:text="Step Picture"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/product_img"
-        app:layout_constraintStart_toStartOf="@+id/product_img"
-        app:layout_constraintTop_toBottomOf="@+id/productTitle" />
+        app:layout_constraintEnd_toEndOf="@+id/process_step_img"
+        app:layout_constraintStart_toStartOf="@+id/process_step_img"
+        app:layout_constraintTop_toBottomOf="@+id/process_step_name" />
 
     <ImageView
-        android:id="@+id/product_img"
+        android:id="@+id/process_step_img"
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView22"
+        app:layout_constraintTop_toBottomOf="@+id/process_step_image_text"
         app:srcCompat="@drawable/imagehere" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_picture"
+        android:id="@+id/add_process_step_picture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="52dp"
         android:clickable="true"
-        app:layout_constraintBottom_toTopOf="@+id/add_pop_up_button"
+        app:layout_constraintBottom_toTopOf="@+id/add_process_step_pop_up_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.448"
-        app:layout_constraintStart_toStartOf="@+id/product_img"
+        app:layout_constraintStart_toStartOf="@+id/process_step_img"
         app:srcCompat="@drawable/add" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

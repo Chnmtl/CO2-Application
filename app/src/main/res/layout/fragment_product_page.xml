@@ -7,56 +7,54 @@
 	android:focusable="false"
 	android:clickable="false">
 
+
 	<TextView
-		android:id="@+id/textView19"
+		android:id="@+id/product_text"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="8dp"
+		android:layout_marginBottom="8dp"
 		android:fontFamily="@font/open_sans_bold"
 		android:foregroundGravity="center"
 		android:gravity="center"
 		android:text="Your list of products:"
-		android:textColor="#707070"
 		android:textSize="24sp"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
+		app:layout_constraintBottom_toTopOf="@+id/product_list"
 
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent" />
 
 	<androidx.recyclerview.widget.RecyclerView
-		android:id="@+id/products_list"
+		android:id="@+id/product_list"
 		android:layout_width="wrap_content"
-		android:layout_height="479dp"
-		android:layout_marginStart="1dp"
+		android:layout_height="300dp"
+		android:layout_marginBottom="16dp"
 		android:layout_marginEnd="1dp"
+		android:layout_marginStart="1dp"
+		app:layout_constraintBottom_toTopOf="@+id/add_product_btn"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/textView19"/>
+		app:layout_constraintStart_toStartOf="parent" />
 
 	<ProgressBar
 		android:id="@+id/progress_circle"
 		android:layout_width="53dp"
-		android:layout_height="380dp"
-		app:layout_constraintBottom_toBottomOf="@+id/products_list"
-		app:layout_constraintEnd_toEndOf="@+id/products_list"
-		app:layout_constraintStart_toStartOf="@+id/products_list"
-		app:layout_constraintTop_toBottomOf="@+id/textView19" />
+		android:layout_height="360dp"
+		app:layout_constraintBottom_toTopOf="@+id/add_product_btn"
+		app:layout_constraintEnd_toEndOf="@+id/product_list"
+
+		app:layout_constraintStart_toStartOf="@+id/product_list"
+		app:layout_constraintTop_toBottomOf="@+id/product_text" />
 
 	<Button
-		android:id="@+id/new_product_button"
+		android:id="@+id/add_product_btn"
 		android:layout_width="402dp"
 		android:layout_height="80dp"
-		android:layout_marginTop="4dp"
-		android:layout_marginBottom="80dp"
-		android:drawableTop="@drawable/basket"
+		android:layout_marginBottom="8dp"
 		android:drawablePadding="0dp"
+		android:drawableTop="@drawable/basket"
 		android:text="ADD NEW PRODUCT"
-		app:backgroundTint="#CBA6A5A5"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.444"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/products_list"
-		app:layout_constraintVertical_bias="0.0" />
+
+		app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

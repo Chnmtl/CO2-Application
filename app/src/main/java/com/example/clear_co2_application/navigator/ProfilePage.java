@@ -5,14 +5,20 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.widget.Button;
+
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.example.clear_co2_application.PhoneVerification_Activity;
 import com.example.clear_co2_application.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,6 +27,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
@@ -62,8 +69,6 @@ public class ProfilePage extends Fragment {
         return fragment;
     }
 
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,17 +76,14 @@ public class ProfilePage extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-
+        setHasOptionsMenu(true);
     }
-
 
     //UI
     private Button logOut;
-    private TextView pName,pMail,pCompany,pPhoneNumber,pJobTitle,pAddress,pCity;
+    private TextView pName, pMail, pCompany, pPhoneNumber, pJobTitle, pAddress, pCity;
     private CircleImageView profileImage;
     private ImageButton uploadPhoto;
-
 
     //FireBase
     private FirebaseAuth mAuth;
@@ -93,12 +95,12 @@ public class ProfilePage extends Fragment {
     private Uri imageUri;
 
 
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-    {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_profile_page, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile_page, container, false);
+
+        setHasOptionsMenu(true);
 
         //UI
         pName = view.findViewById(R.id.name);
@@ -117,64 +119,52 @@ public class ProfilePage extends Fragment {
         fStore = FirebaseFirestore.getInstance();
         storageRef = FirebaseStorage.getInstance().getReference();
 
-        profileRef = storageRef.child("users/"+mAuth.getCurrentUser().getUid()+"/profile.jpg");
+        profileRef = storageRef.child("users/" + mAuth.getCurrentUser().getUid() + "/profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(uri -> Picasso.get().load(uri).into(profileImage));
-
 
 
         DocumentReference documentReference = fStore.collection("users").document(mAuth.getCurrentUser().getUid());
         documentReference.get().addOnSuccessListener(documentSnapshot ->
         {
-            String fullName = documentSnapshot.getString("firstName") +" "+documentSnapshot.getString("lastName");
+            String fullName = documentSnapshot.getString("firstName") + " " + documentSnapshot.getString("lastName");
             pName.setText(fullName);
             pMail.setText(documentSnapshot.getString("emailAddress"));
             pCompany.setText(documentSnapshot.getString("companyName"));
             pPhoneNumber.setText(mAuth.getCurrentUser().getPhoneNumber());
             pJobTitle.setText(documentSnapshot.getString("jobTitle"));
             pAddress.setText(documentSnapshot.getString("address"));
-            pCity.setText(documentSnapshot.getString("city"));;
-
-
-
+            pCity.setText(documentSnapshot.getString("city"));
+            ;
 
         });
 
         //Button Listener
         logOut.setOnClickListener(v ->
         {
-
             //On click Sign Out and Go to Log in Activity
             mAuth.signOut();
-            startActivity(new Intent(getActivity() , PhoneVerification_Activity.class));
-
-
+            startActivity(new Intent(getActivity(), PhoneVerification_Activity.class));
         });
 
         uploadPhoto.setOnClickListener(v ->
         {
             //Open Gallery
             Intent open_gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-            startActivityForResult(open_gallery,1000);
-
-
-
+            startActivityForResult(open_gallery, 1000);
         });
-
         return view;
+
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode,Intent data)
-    {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == 1000)
-        {
-            if (resultCode == Activity.RESULT_OK)
-            {
+        if (requestCode == 1000) {
+            if (resultCode == Activity.RESULT_OK) {
                 imageUri = data.getData();
                 //profileImage.setImageURI(imageUri);
-                
+
                 uploadImageToFirebase(imageUri);
             }
         }
@@ -183,9 +173,8 @@ public class ProfilePage extends Fragment {
     }
 
     //Uploading image to Firebase Storage
-    private void uploadImageToFirebase(Uri imageUri)
-    {
-        StorageReference fileRef = storageRef.child("users/"+mAuth.getCurrentUser().getUid()+"/profile.jpg");
+    private void uploadImageToFirebase(Uri imageUri) {
+        StorageReference fileRef = storageRef.child("users/" + mAuth.getCurrentUser().getUid() + "/profile.jpg");
 
         fileRef.putFile(imageUri).addOnSuccessListener(taskSnapshot ->
         {
@@ -204,5 +193,10 @@ public class ProfilePage extends Fragment {
     }
 
 
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
 
+        inflater.inflate(R.menu.profile_menu, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
 }

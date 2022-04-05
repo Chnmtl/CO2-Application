@@ -72,7 +72,6 @@
 			android:text="Why do you want to calculate your carbon footprint?"
 			android:layout_width="400dp"
 			android:layout_height="83dp" android:id="@+id/textView14"
-			android:textColor="#707070"
 			android:fontFamily="@font/open_sans_bold" android:textSize="24sp"
 			android:foregroundGravity="center" android:gravity="center" app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintEnd_toEndOf="parent"
@@ -83,13 +82,9 @@
 		android:id="@+id/last_continue_BUTTON"
 		android:layout_width="338dp"
 		android:layout_height="60dp"
-		android:layout_marginTop="150dp"
 		android:text="Continue"
-		app:backgroundTint="#707079"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintHorizontal_bias="0.493"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/why_group"
-		app:layout_constraintVertical_bias="0.0" />
+		app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

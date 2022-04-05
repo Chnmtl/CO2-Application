@@ -5,29 +5,15 @@
 												   android:layout_height="match_parent"
 												   tools:context=".navigator.HomePage">
 
-	<Button
-		android:id="@+id/button7"
-		android:layout_width="200dp"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="30dp"
-		android:drawableLeft="@drawable/approval"
-		android:fontFamily="@font/open_sans_bold"
-		android:text="Text"
-		app:backgroundTint="#B69696"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/button6" />
-
 	<TextView
 		android:id="@+id/textView16"
 		android:layout_width="wrap_content"
 		android:layout_height="83dp"
-		android:layout_marginTop="8dp"
+		android:layout_marginTop="80dp"
 		android:fontFamily="@font/open_sans_bold"
 		android:foregroundGravity="center"
 		android:gravity="center"
 		android:text="Choose how you want to insert data:"
-		android:textColor="#707070"
 		android:textSize="24sp"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintHorizontal_bias="0.0"
@@ -35,30 +21,46 @@
 		app:layout_constraintTop_toTopOf="parent" />
 
 	<Button
-		android:id="@+id/button5"
+		android:id="@+id/button7"
 		android:layout_width="200dp"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="130dp"
-		android:drawableLeft="@drawable/camera2"
+		android:layout_marginTop="28dp"
+		android:drawableLeft="@drawable/approval"
 		android:fontFamily="@font/open_sans_bold"
-		android:text="Camera"
+		android:text="Text"
 		app:backgroundTint="#B69696"
 		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.502"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/textView16" />
+		app:layout_constraintTop_toBottomOf="@+id/button6" />
 
 	<Button
 		android:id="@+id/button6"
 		android:layout_width="200dp"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="30dp"
+		android:layout_marginTop="32dp"
 		android:drawableLeft="@drawable/microphone"
 		android:fontFamily="@font/open_sans_bold"
 		android:text="Microphone"
 		app:backgroundTint="#B69696"
 		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.502"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toBottomOf="@+id/button5" />
+
+	<Button
+		android:id="@+id/button5"
+		android:layout_width="200dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="128dp"
+		android:drawableLeft="@drawable/camera2"
+		android:fontFamily="@font/open_sans_bold"
+		android:text="Camera"
+		app:backgroundTint="#B69696"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.502"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

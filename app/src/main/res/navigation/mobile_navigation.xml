@@ -10,8 +10,8 @@
 			  android:label="fragment_statistics_page" tools:layout="@layout/fragment_statistics_page"/>
 	<fragment android:id="@+id/cameraPage" android:name="com.example.clear_co2_application.navigator.CameraPage"
 			  android:label="fragment_camera_page" tools:layout="@layout/fragment_camera_page"/>
-	<fragment android:id="@+id/listPage" android:name="com.example.clear_co2_application.navigator.ListPage"
-			  android:label="fragment_list_page" tools:layout="@layout/fragment_list_page"/>
+	<fragment android:id="@+id/listPage" android:name="com.example.clear_co2_application.navigator.ProductPage"
+			  android:label="fragment_list_page" tools:layout="@layout/fragment_product_page"/>
 	<fragment android:id="@+id/profilePage" android:name="com.example.clear_co2_application.navigator.ProfilePage"
 			  android:label="fragment_profile_page" tools:layout="@layout/fragment_profile_page"/>
 </navigation>
